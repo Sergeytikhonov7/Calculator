@@ -11,13 +11,12 @@ enum Operation{
         public Integer action(int x, int y){ return x * y;}
     },
     DIVISION {
-        public Integer action(int x, int y) {
-            return x / y;}
+        public Integer action(int x, int y) { return x / y;}
     };
     public abstract Integer action(int x, int y);
 }
 
-public class Calculate {
+class Calculate {
     private Set<Character> roman_symbol;
     private Set<Character> arabic_symbol;
     private Set<Character> operation;
@@ -45,11 +44,8 @@ public class Calculate {
 
     }
 
-    public void ReadExpression() throws Exception {
-        String expression;
-        Scanner scanner = new Scanner(System.in);
-        expression = scanner.nextLine();
-        String[] tokens = expression.split(" ");
+    public void ReadExpression(String input) throws Exception {
+        String[] tokens = input.split(" ");
         List<String> temp = new ArrayList<>();
         for (int i=0; i < tokens.length; ++i) {
             if (!tokens[i].equals("")) {
